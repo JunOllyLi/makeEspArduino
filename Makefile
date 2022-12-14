@@ -7,6 +7,8 @@ SKETCH ?= $(HOME)/.arduino15/packages/esp32/hardware/esp32/2.0.5/libraries/ESP32
 BUILD_THREADS = 1
 TOOLCHAIN_FILE ?= ${BUILD_DIR}/../toolchain.cmake
 LIBS += ${ARDUINO_LIBS}/Adafruit_SH110X
+LIBS += ${ARDUINO_LIBS}/Adafruit_SH110X
+LIBS += $(HOME)/.arduino15/packages/esp32/hardware/esp32/2.0.5/libraries/SPIFFS
 EXPAND_LIBS = 1
 
 include makeEspArduino.mk
