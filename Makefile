@@ -38,7 +38,7 @@ generate_toolchain_file:
 
 LD_COM1 = $(subst FreeRTOS.,opentx.,${LD_COM})
 UOBJ = $(subst ${BUILD_DIR}/FreeRTOS.ino.cpp.o ,,$(USER_OBJ))
-FW_LD_COM = $(subst arduino.ar",arduino.ar" ${UOBJ} -L${BUILD_DIR}/../opentx/radio/src/ -lfirmware,${LD_COM1})
+FW_LD_COM = $(subst arduino.ar",arduino.ar" ${UOBJ} -L${BUILD_DIR}/../opentx/arduino/radio/src/ -ltx_firmware,${LD_COM1})
 FW_OBJCOPY = $(subst FreeRTOS.,opentx.,${OBJCOPY})
 FW_UPLOAD = $(subst FreeRTOS.bin,opentx.bin,${UPLOAD_COM})
 
