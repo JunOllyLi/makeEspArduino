@@ -15,6 +15,7 @@ START_TIME := $(shell date +%s)
 __THIS_FILE := $(abspath $(lastword $(MAKEFILE_LIST)))
 __TOOLS_DIR := $(dir $(__THIS_FILE))tools
 OS ?= $(shell uname -s)
+PART_FILE ?= $(dir $(__THIS_FILE))/partitions.csv
 
 # Include possible operating system specfic settings
 -include $(dir $(__THIS_FILE))/os/$(OS).mk

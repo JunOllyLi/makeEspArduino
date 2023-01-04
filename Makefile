@@ -3,6 +3,7 @@ CHIP ?= esp32
 BOARD ?= adafruit_feather_esp32_v2
 UPLOAD_PORT_MATCH ?= /dev/ttyACM*
 ARDUINO_LIBS = $(HOME)/Arduino/libraries
+#SKETCH ?= FreeRTOS.ino
 SKETCH ?= $(HOME)/.arduino15/packages/esp32/hardware/esp32/2.0.5/libraries/ESP32/examples/FreeRTOS/FreeRTOS.ino
 BUILD_THREADS = 1
 TOOLCHAIN_FILE ?= ${BUILD_DIR}/../toolchain.cmake
@@ -10,6 +11,7 @@ LIBS += ${ARDUINO_LIBS}/Adafruit_SH110X
 LIBS += $(HOME)/.arduino15/packages/esp32/hardware/esp32/2.0.5/libraries/SPIFFS
 LIBS += $(HOME)/.arduino15/packages/esp32/hardware/esp32/2.0.5/libraries/SD
 LIBS += ${ARDUINO_LIBS}/Adafruit_MCP23017_Arduino_Library
+LIBS += ${ARDUINO_LIBS}/Adafruit_RA8875
 EXPAND_LIBS = 1
 
 include makeEspArduino.mk
